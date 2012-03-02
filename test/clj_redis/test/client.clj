@@ -4,7 +4,7 @@
         [clj-redis.client]))
 
 (deftest test-client
-  (let [db (init :url "redis://localhost")
+  (let [db (init {:url "redis://localhost"})
         [k v] ["foo" "bar"]]
     (is (= "PONG" (ping db)))
     (set db k v)
